@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="naver-site-verification" content="d0fab6d0256f8edfffe285600c6f825a6bf31896" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>헐 시티 선수 명단 · 2026-27</title>
+<meta name="description" content="유럽 5대 리그 2026-27 시즌 이적 기록과 프리미어리그 클럽별 선수 명단.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2557338953436433" crossorigin="anonymous"></script>
+<style>
+:root{
+  --bg-navy:#0B1220; --page:#070B14; --panel:#0E1526;
+  --cream:#F3F1E7; --cream-dim:rgba(243,241,231,0.55);
+  --gold:#F5B301; --crimson:#C8102E; --pitch:#1F8F6F; --line:rgba(243,241,231,0.12);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--page);color:var(--cream);font-family:'Inter',sans-serif;min-height:100vh;}
+a{color:inherit;text-decoration:none;}
+.shell{max-width:920px;margin:0 auto;padding:48px 20px 100px;}
+.brand{display:flex;align-items:center;gap:12px;margin-bottom:6px;}
+.brand .dot{width:10px;height:10px;border-radius:50%;background:var(--crimson);}
+.brand .tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;color:var(--gold);text-transform:uppercase;}
+h1.title{font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(24px,5vw,38px);text-transform:uppercase;margin-bottom:8px;}
+.desc{color:var(--cream-dim);font-size:14px;max-width:600px;line-height:1.6;margin-bottom:24px;}
+
+.site-tabs{display:flex;gap:4px;margin-bottom:32px;border-bottom:1px solid var(--line);}
+.site-tab{
+  font-family:'Oswald',sans-serif;font-weight:600;font-size:14px;letter-spacing:.03em;text-transform:uppercase;
+  padding:12px 20px;color:var(--cream-dim);border-bottom:2px solid transparent;
+}
+.site-tab:hover{color:var(--cream);}
+.site-tab.active{color:var(--gold);border-bottom-color:var(--gold);}
+
+.league-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;}
+.league-tab{
+  font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.04em;text-transform:uppercase;
+  background:transparent;border:1px solid var(--line);color:var(--cream-dim);
+  padding:8px 14px;border-radius:20px;cursor:pointer;transition:all .15s;
+}
+.league-tab:hover{border-color:var(--gold);color:var(--cream);}
+.league-tab.active{background:var(--gold);border-color:var(--gold);color:#1a1200;font-weight:600;}
+
+table{width:100%;border-collapse:collapse;background:var(--bg-navy);border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+thead th{
+  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--gold);text-align:left;padding:14px 16px;border-bottom:1px solid var(--line);background:rgba(243,241,231,0.03);
+}
+tbody td{padding:14px 16px;border-bottom:1px solid var(--line);font-size:14px;vertical-align:top;}
+tbody tr:last-child td{border-bottom:none;}
+tbody tr:hover{background:rgba(243,241,231,0.03);}
+.league-badge{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--cream-dim);}
+.player-name{font-weight:700;}
+.route{color:var(--cream-dim);white-space:nowrap;}
+.route b{color:var(--cream);}
+.fee{color:var(--gold);font-family:'JetBrains Mono',monospace;font-size:13px;}
+.note{color:var(--cream-dim);font-size:12px;}
+.empty{border:1px dashed var(--line);border-radius:12px;padding:40px 24px;text-align:center;color:var(--cream-dim);font-size:14px;}
+
+.back-link{display:inline-block;margin-bottom:24px;font-size:13px;color:var(--cream-dim);}
+.back-link:hover{color:var(--gold);}
+.club-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;}
+.club-card{
+  display:block;background:var(--bg-navy);border:1px solid var(--line);border-radius:10px;
+  padding:20px 16px;text-align:center;font-family:'Oswald',sans-serif;font-weight:600;
+  text-transform:uppercase;font-size:14px;transition:border-color .15s;
+}
+.club-card:hover{border-color:var(--gold);}
+.club-card.disabled{color:var(--cream-dim);opacity:.4;cursor:not-allowed;}
+.club-meta{font-size:12px;color:var(--cream-dim);margin-bottom:28px;}
+.position-group{margin-bottom:32px;}
+.position-header{
+  font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--line);
+}
+.player-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;}
+.player-card{
+  display:flex;align-items:center;gap:14px;background:var(--bg-navy);border:1px solid var(--line);
+  border-radius:8px;padding:12px 14px;
+}
+.player-num{font-family:'Oswald',sans-serif;font-weight:700;font-size:20px;color:var(--gold);min-width:32px;text-align:center;}
+.player-name-kr{font-weight:600;font-size:14px;}
+.new-badge{
+  display:inline-block;background:var(--crimson);color:#fff;font-family:'JetBrains Mono',monospace;
+  font-size:9px;font-weight:700;letter-spacing:.04em;padding:2px 6px;border-radius:4px;
+  margin-left:6px;vertical-align:middle;
+}
+.player-name-en{font-size:11px;color:var(--cream-dim);}
+
+.static-body{font-size:14px;line-height:1.8;color:rgba(243,241,231,0.85);max-width:560px;}
+.static-body p{margin-bottom:14px;}
+.static-body a{color:var(--gold);}
+.site-footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);}
+.footer-links{display:flex;gap:16px;margin-bottom:8px;}
+.footer-links a{font-size:12px;color:var(--cream-dim);}
+.footer-links a:hover{color:var(--gold);}
+.footer-note{font-size:11px;color:rgba(243,241,231,0.35);}
+.cookie-banner{
+  position:fixed;bottom:0;left:0;right:0;background:var(--panel);border-top:1px solid var(--line);
+  padding:16px 20px;display:none;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;z-index:999;
+}
+.cookie-banner p{font-size:12px;color:var(--cream-dim);max-width:640px;}
+.cookie-banner button{
+  background:var(--gold);color:#1a1200;border:none;padding:8px 18px;border-radius:6px;
+  font-family:'Oswald',sans-serif;font-weight:600;font-size:12px;cursor:pointer;text-transform:uppercase;
+}
+@media (max-width: 640px){
+  table, thead, tbody, th, td, tr{display:block;}
+  thead{display:none;}
+  tbody tr{border:1px solid var(--line);border-radius:10px;margin-bottom:12px;padding:12px;}
+  tbody td{border-bottom:none;padding:6px 0;}
+}
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="brand">
+    <span class="dot"></span>
+    <span class="tag">2026-27 Season · Big 5 Football Hub</span>
+  </div>
+  <h1 class="title">2026-27 시즌 축구 기록</h1>
+  <p class="desc">유럽 5대 리그 이적 기록과 프리미어리그 클럽별 선수 명단을 한 곳에서 확인하세요.</p>
+
+  <div class="site-tabs">
+    <a class="site-tab " href="../../index.html">이적 기록</a>
+    <a class="site-tab active" href="../../rosters/index.html">선수 명단</a>
+  </div>
+
+  
+    <a class="back-link" href="../index.html">← 클럽 목록으로</a>
+    <h1 class="title" style="margin-bottom:6px">헐 시티</h1>
+    <p class="club-meta">2026년 10월 말 기준 (여름 이적시장 마감 후) · 프리미어리그 공식 등번호 발표(9/22)를 기준으로 구단 발표·주요 매체와 대조, 마감 후 임대 이탈 선수는 제외</p>
+    
+        <div class="position-group">
+          <h2 class="position-header">골키퍼</h2>
+          <div class="player-grid">
+          <div class="player-card">
+            <div class="player-num">1</div>
+            <div>
+              <div class="player-name-kr">잭 버틀랜드 <span class="new-badge">NEW</span></div>
+              <div class="player-name-en">Jack Butland</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">12</div>
+            <div>
+              <div class="player-name-kr">딜런 필립스</div>
+              <div class="player-name-en">Dillon Phillips</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">19</div>
+            <div>
+              <div class="player-name-kr">콘스탄티노스 촐라키스 <span class="new-badge">NEW</span></div>
+              <div class="player-name-en">Konstantinos Tzolakis</div>
+            </div>
+          </div></div>
+        </div>
+        <div class="position-group">
+          <h2 class="position-header">수비수</h2>
+          <div class="player-grid">
+          <div class="player-card">
+            <div class="player-num">2</div>
+            <div>
+              <div class="player-name-kr">루이 코일</div>
+              <div class="player-name-en">Lewie Coyle</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">3</div>
+            <div>
+              <div class="player-name-kr">라이언 자일스</div>
+              <div class="player-name-en">Ryan Giles</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">4</div>
+            <div>
+              <div class="player-name-kr">찰리 휴스</div>
+              <div class="player-name-en">Charlie Hughes</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">6</div>
+            <div>
+              <div class="player-name-kr">세미 아자이</div>
+              <div class="player-name-en">Semi Ajayi</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">15</div>
+            <div>
+              <div class="player-name-kr">존 이건</div>
+              <div class="player-name-en">John Egan</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">17</div>
+            <div>
+              <div class="player-name-kr">패디 맥네어</div>
+              <div class="player-name-en">Paddy McNair</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">18</div>
+            <div>
+              <div class="player-name-kr">브룩 노턴-커피 <span class="new-badge">NEW</span></div>
+              <div class="player-name-en">Brooke Norton-Cuffy</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">22</div>
+            <div>
+              <div class="player-name-kr">루커스 헤링턴 <span class="new-badge">NEW</span></div>
+              <div class="player-name-en">Lucas Herrington</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">23</div>
+            <div>
+              <div class="player-name-kr">맷 타깃 <span class="new-badge">NEW</span></div>
+              <div class="player-name-en">Matt Targett</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">32</div>
+            <div>
+              <div class="player-name-kr">노벨 망디 <span class="new-badge">NEW</span></div>
+              <div class="player-name-en">Nobel Mendy</div>
+            </div>
+          </div></div>
+        </div>
+        <div class="position-group">
+          <h2 class="position-header">미드필더</h2>
+          <div class="player-grid">
+          <div class="player-card">
+            <div class="player-num">5</div>
+            <div>
+              <div class="player-name-kr">모리타 히데마사 <span class="new-badge">NEW</span></div>
+              <div class="player-name-en">Hidemasa Morita</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">8</div>
+            <div>
+              <div class="player-name-kr">엘리오 마타조</div>
+              <div class="player-name-en">Eliot Matazo</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">14</div>
+            <div>
+              <div class="player-name-kr">옌스 히에르토-달 <span class="new-badge">NEW</span></div>
+              <div class="player-name-en">Jens Hjerto-Dahl</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">21</div>
+            <div>
+              <div class="player-name-kr">엘리엇 스트라우드 <span class="new-badge">NEW</span></div>
+              <div class="player-name-en">Elliot Stroud</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">25</div>
+            <div>
+              <div class="player-name-kr">맷 크룩스</div>
+              <div class="player-name-en">Matt Crooks</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">27</div>
+            <div>
+              <div class="player-name-kr">리건 슬레이터</div>
+              <div class="player-name-en">Regan Slater</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">29</div>
+            <div>
+              <div class="player-name-kr">뤼카 구르나-두아트 <span class="new-badge">NEW</span></div>
+              <div class="player-name-en">Lucas Gourna-Douath</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">33</div>
+            <div>
+              <div class="player-name-kr">압둘카디르 외뮈르</div>
+              <div class="player-name-en">Abdülkadir Ömür</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">42</div>
+            <div>
+              <div class="player-name-kr">팀 이로에그부남 <span class="new-badge">NEW</span></div>
+              <div class="player-name-en">Tim Iroegbunam</div>
+            </div>
+          </div></div>
+        </div>
+        <div class="position-group">
+          <h2 class="position-header">공격수</h2>
+          <div class="player-grid">
+          <div class="player-card">
+            <div class="player-num">7</div>
+            <div>
+              <div class="player-name-kr">소르바 토머스 <span class="new-badge">NEW</span></div>
+              <div class="player-name-en">Sorba Thomas</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">9</div>
+            <div>
+              <div class="player-name-kr">올리버 맥버니</div>
+              <div class="player-name-en">Oliver McBurnie</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">10</div>
+            <div>
+              <div class="player-name-kr">모하메드 벨루미</div>
+              <div class="player-name-en">Mohamed Belloumi</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">11</div>
+            <div>
+              <div class="player-name-kr">조 겔하르트 <span class="new-badge">NEW</span></div>
+              <div class="player-name-en">Joe Gelhardt</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">28</div>
+            <div>
+              <div class="player-name-kr">일리야스 안사 <span class="new-badge">NEW</span></div>
+              <div class="player-name-en">Ilyas Ansah</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">50</div>
+            <div>
+              <div class="player-name-kr">모하메드알리 초 <span class="new-badge">NEW</span></div>
+              <div class="player-name-en">Mohamed-Ali Cho</div>
+            </div>
+          </div></div>
+        </div>
+    <ins class="adsbygoogle"
+         style="display:block;margin-top:32px"
+         data-ad-client="ca-pub-2557338953436433"
+         data-ad-slot="0000000000"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    
+    
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="../../index.html">홈</a>
+      <a href="../../about.html">소개</a>
+      <a href="../../privacy.html">개인정보처리방침</a>
+      <a href="../../contact.html">문의</a>
+    </div>
+    <p class="footer-note">2026-27 시즌 축구 기록 · 팬이 운영하는 정보 아카이브입니다.</p>
+  </footer>
+</div>
+
+<div class="cookie-banner" id="cookie-banner">
+  <p>이 사이트는 광고 게재를 위해 쿠키를 사용할 수 있습니다. 계속 이용하시면 쿠키 사용에 동의하는 것으로 간주됩니다.
+    자세한 내용은 <a href="../../privacy.html" style="color:var(--gold)">개인정보처리방침</a>을 확인하세요.</p>
+  <button onclick="acceptCookies()">확인</button>
+</div>
+<script>
+  function acceptCookies() {
+    localStorage.setItem('cookieConsent', 'true');
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+  if (!localStorage.getItem('cookieConsent')) {
+    document.getElementById('cookie-banner').style.display = 'flex';
+  }
+</script>
+</body>
+</html>
